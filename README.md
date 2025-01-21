@@ -5,6 +5,7 @@ A comprehensive design-to-development pipeline integrating Figma, Storybook, and
 ## Overview
 
 This repository contains our component library and design system pipeline. The system integrates:
+
 - Figma for design and component specifications
 - Storybook for component development and documentation
 - React for component implementation
@@ -13,6 +14,7 @@ This repository contains our component library and design system pipeline. The s
 ## Architecture
 
 ### Component Structure
+
 ```
 src/
 ├── components/
@@ -23,6 +25,7 @@ src/
 ```
 
 Each component follows this structure:
+
 ```
 ComponentName/
 ├── ComponentName.tsx
@@ -32,11 +35,13 @@ ComponentName/
 ```
 
 ### Design Tokens
+
 Design tokens are synchronized from Figma using Tokens Studio and stored in `tokens/` directory. These drive our theme variables and component styles.
 
 ## Setup
 
 1. **Prerequisites**
+
    - Node.js (v16 or higher)
    - Yarn/npm
    - Figma account with admin access
@@ -44,13 +49,14 @@ Design tokens are synchronized from Figma using Tokens Studio and stored in `tok
    - GitHub access
 
 2. **Installation**
+
    ```bash
    # Clone the repository
    git clone [repository-url]
-   
+
    # Install dependencies
    yarn install
-   
+
    # Setup environment variables
    cp .env.example .env
    ```
@@ -65,12 +71,14 @@ Design tokens are synchronized from Figma using Tokens Studio and stored in `tok
 ## Development Workflow
 
 ### 1. Design Phase (Figma)
+
 - Components are designed in Figma following atomic design principles
 - Design tokens are maintained using Tokens Studio
 - Each component frame is organized by atomic level (atoms, molecules, organisms)
 - Deep links to specific components are used in Jira tickets
 
 ### 2. Development Phase
+
 - Create a new branch from main: `feature/[JIRA-TICKET]-component-name`
 - Implement component following Figma specifications
 - Create stories in Storybook with design integration
@@ -78,6 +86,7 @@ Design tokens are synchronized from Figma using Tokens Studio and stored in `tok
 - Document props and usage
 
 ### 3. Quality Assurance
+
 - Visual regression testing via Chromatic
 - Accessibility testing (WCAG compliance)
 - Unit and integration tests
@@ -86,16 +95,19 @@ Design tokens are synchronized from Figma using Tokens Studio and stored in `tok
 ## Integration Points
 
 ### Figma Integration
+
 - **Location**: `.storybook/preview.js`
 - Configure Figma addon for direct design reference
 - Use design tokens from Tokens Studio
 
 ### Jira Integration
+
 - Tickets follow the format: `[PROJECT]-[NUMBER] Component Name`
 - Link Figma designs and Storybook stories in tickets
 - Use labels to track component status
 
 ### Storybook Configuration
+
 - **Location**: `.storybook/`
 - Configured addons:
   - Figma (design references)
@@ -138,6 +150,7 @@ yarn lint
 ## Best Practices
 
 1. **Component Development**
+
    - Follow atomic design principles
    - Use design tokens for all visual properties
    - Implement responsive behavior
@@ -145,6 +158,7 @@ yarn lint
    - Add accessibility features
 
 2. **Version Control**
+
    - Meaningful commit messages referencing Jira tickets
    - Branch naming: `feature/[JIRA-TICKET]-description`
    - PR template completion
